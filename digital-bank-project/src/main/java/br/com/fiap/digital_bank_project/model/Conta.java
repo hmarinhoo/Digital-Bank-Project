@@ -11,13 +11,13 @@ public class Conta {
     private String cpfTitular;
     private LocalDate dataAbertura;
     private double saldoInicial;
-    private boolean ativa;
+    private String ativa;  
     private String tipo;
 
     private static final List<String> TIPOS_VALIDOS = Arrays.asList("CORRENTE", "POUPANCA", "SALARIO");
 
     public static boolean tipoValido(String tipo) {
-        return TIPOS_VALIDOS.contains(tipo);
+        return TIPOS_VALIDOS.contains(tipo.toUpperCase());
     }
 
     public int getNumero() {
@@ -68,12 +68,12 @@ public class Conta {
         this.saldoInicial = saldoInicial;
     }
 
-    public boolean isAtiva() {
+    public String getAtiva() {
         return ativa;
     }
 
-    public void setAtiva(boolean ativa) {
-        this.ativa = ativa;
+    public void setAtiva(String ativa) {
+        this.ativa = ativa.toUpperCase(); 
     }
 
     public String getTipo() {
@@ -81,7 +81,7 @@ public class Conta {
     }
 
     public void setTipo(String tipo) {
-        this.tipo = tipo;
+        this.tipo = tipo.toUpperCase();
     }
 
     public static List<String> getTiposValidos() {
